@@ -1,50 +1,51 @@
 \name{swstNP}
 \alias{swstNP}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-LaTeX code for statistical reference
-}
-\description{
-The same as \code{\link{swst}} except that no parantheses are printed
-}
+\title{LaTeX code for statistical reference}
 \usage{
-swstNP(x, ...)
+  swstNP(x, ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-An input object. Currently supported are a numerical vector and objects of classes "htest" (depending on statistic), "lm", "aov" and "anova".
-}
-  \item{\dots}{
-Arguments sent to \code{\link{swp}}
-}
-}
-\details{
-This function attemps to extract information needed to make a LaTeX code of the statistic in the following format (for an F value): 
+  \item{x}{An input object. Currently supported are a
+  numerical vector and objects of classes "htest"
+  (depending on statistic), "lm", "aov" and "anova".}
 
-(F(df1,df2)=..., p=...)
-
-Some arguments can be passed to \code{\link{swp}} to modify the way the statistic is printed. For example, 'digits' an be used to change the amount of digits printed and 'sig' can be used to change the way to show only significance cutoff scores. For example, with p=0.02 this would return:
-(F(df1,df2)=..., p<0.05)
-
-This is aimed to facilitate the use of Sweave especially for users new to R. This is currently in development and is so far only a few commonly used statistics are implemented, but this should change in future versions.
-
-If you have any ideas on other ways to facilitate using Sweave (except of course existing methods such as xtable) please contact me. Also, if you know of an object that is not implemented please contact me as well. If you supply me a small piece of code that extracts the statistic, degrees of freedom and p-value from that object I will include you in the author list.
+  \item{\dots}{Arguments sent to \code{\link{swp}}}
 }
 \value{
-A strings containing LaTeX code, or a named vector of strings containing LaTeX code
+  A strings containing LaTeX code, or a named vector of
+  strings containing LaTeX code
 }
-
-\author{
-Sacha Epskamp (sacha.epskamp@gmail.com)
+\description{
+  The same as \code{\link{swst}} except that no parantheses
+  are printed
 }
+\details{
+  This function attemps to extract information needed to
+  make a LaTeX code of the statistic in the following
+  format (for an F value):
 
+  (F(df1,df2)=..., p=...)
 
-\seealso{
-\code{\link{swst}}
-\code{\link{swp}}
+  Some arguments can be passed to \code{\link{swp}} to
+  modify the way the statistic is printed. For example,
+  'digits' an be used to change the amount of digits
+  printed and 'sig' can be used to change the way to show
+  only significance cutoff scores. For example, with p=0.02
+  this would return: (F(df1,df2)=..., p<0.05)
+
+  This is aimed to facilitate the use of Sweave especially
+  for users new to R. This is currently in development and
+  is so far only a few commonly used statistics are
+  implemented, but this should change in future versions.
+
+  If you have any ideas on other ways to facilitate using
+  Sweave (except of course existing methods such as xtable)
+  please contact me. Also, if you know of an object that is
+  not implemented please contact me as well. If you supply
+  me a small piece of code that extracts the statistic,
+  degrees of freedom and p-value from that object I will
+  include you in the author list.
 }
-
 \examples{
 ### Using examples from documentation of the used functions
 # t-test:
@@ -105,8 +106,11 @@ op <- options(contrasts=c("contr.helmert", "contr.poly"))
 npk.aov <- aov(yield ~ block + N*P*K, npk)
 
 swst(npk.aov)
-
 }
-
-
+\author{
+  Sacha Epskamp (sacha.epskamp@gmail.com)
+}
+\seealso{
+  \code{\link{swst}} \code{\link{swp}}
+}
 
